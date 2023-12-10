@@ -8,7 +8,7 @@ namespace ContactServiceApi.Repositories
 {
     public interface IContactRepo
     {
-        public List<Contact> GetAllContacts();
-        public Contact GetContactById(int id);
+        Task<List<Contact>> GetAllContactsAsync();
+        Task<Contact> GetContactByIdAsync(int id);
     }
 }

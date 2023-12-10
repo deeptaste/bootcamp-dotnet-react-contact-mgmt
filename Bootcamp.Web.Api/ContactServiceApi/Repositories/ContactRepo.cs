@@ -16,14 +16,14 @@ namespace ContactServiceApi.Repositories
             new() { Id = 4, FirstName = "Jane", LastName = "Smith", ContactType = ContactType.Phone, ContactDetails = "0987654321" }
         };
 
-        public List<Contact> GetAllContacts()
+        public Task<List<Contact>> GetAllContactsAsync()
         {
-            return _contacts;
+            return Task.FromResult(_contacts);
         }
 
-        public Contact GetContactById(int id)
+        public Task<Contact> GetContactByIdAsync(int id)
         {
-            return _contacts.FirstOrDefault(c => c.Id == id) ?? throw new Exception("Contact not found");
+            return Task.FromResult(_contacts.FirstOrDefault(c => c.Id == id) ?? throw new Exception("Contact not found"));
         }
     }
 }

@@ -16,14 +16,14 @@ namespace ContactServiceApi.Services
             _contactRepo = contactRepo;
         }
 
-        public List<Contact> GetAllContacts()
+        public async Task<List<Contact>> GetAllContactsAsync()
         {
-            return _contactRepo.GetAllContacts();
+            return await _contactRepo.GetAllContactsAsync();
         }
 
-        public Contact GetContactById(int id)
+        public async Task<Contact> GetContactByIdAsync(int id)
         {
-            return _contactRepo.GetContactById(id);
+            return await _contactRepo.GetContactByIdAsync(id);
         }
     }
 }
