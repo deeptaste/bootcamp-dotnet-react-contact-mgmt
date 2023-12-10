@@ -1,5 +1,11 @@
-node_modules
+# dependencies
+/node_modules
+
+# production
 dist
+/build
+
+# Misc
 .DS_Store
 
 # Build results
