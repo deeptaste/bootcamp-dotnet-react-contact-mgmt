@@ -6,7 +6,7 @@ using ContactServiceApi.Models;
 
 namespace ContactServiceApi.Services
 {
-    public interface IContacService
+    public interface IContactService
     {
         public List<Contact> GetAllContacts();
         public Contact GetContactById(int id);

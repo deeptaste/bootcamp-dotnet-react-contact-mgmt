@@ -7,11 +7,11 @@ using ContactServiceApi.Repositories;
 
 namespace ContactServiceApi.Services
 {
-    public class ContacService : IContacService
+    public class ContactService : IContactService
     {
         private readonly IContactRepo _contactRepo;
 
-        public ContacService(IContactRepo contactRepo)
+        public ContactService(IContactRepo contactRepo)
         {
             _contactRepo = contactRepo;
         }
