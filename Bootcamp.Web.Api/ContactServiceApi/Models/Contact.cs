@@ -10,7 +10,7 @@ namespace ContactServiceApi.Models
         public int Id { get; set; }
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
-        public ContactType Type { get; set; }
+        public ContactType ContactType { get; set; }
         public string ContactDetails { get; set; } = string.Empty;
     }
 }
