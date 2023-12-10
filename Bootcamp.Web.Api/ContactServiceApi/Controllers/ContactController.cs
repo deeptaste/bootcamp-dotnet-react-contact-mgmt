@@ -36,5 +36,31 @@ namespace ContactServiceApi.Controllers
             }
             return contact;
         }
+
+        [HttpPost] // api/contact
+        public async Task<ActionResult<Contact>> AddContact(Contact contact)
+        {
+            await _contactService.AddContactAsync(contact);
+            return CreatedAtAction(nameof(GetContactById), new { id = contact.Id }, contact);
+        }
+
+        [HttpPut("{id}")] // api/contact/1
+        public async Task<IActionResult> UpdateContact(int id, Contact contact)
+        {
+            if (id != contact.Id)
+            {
+                return BadRequest();
+            }
+
+            await _contactService.UpdateContactAsync(contact);
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")] // api/contact/1
+        public async Task<IActionResult> DeleteContact(int id)
+        {
+            await _contactService.DeleteContactAsync(id);
+            return NoContent();
+        }
     }
 }
